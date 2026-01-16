@@ -1799,13 +1799,15 @@ abstract class AbstractBoleto implements BoletoContract
      * Define o codigo de barras
      *
      * @return string
-     * @throws \Exception
+     * @return AbstractBoleto
      */
-    public function setCodigoBarras($campoCodigoBarras)
+    public function setCodigoBarras($codigoDeBarras)
     {
-		$this->campoCodigoBarras = $campoCodigoBarras;
+		$this->campoCodigoBarras = $codigoDeBarras;
+        return $this;
 	}
 
+    
 
     /**
      * Retorna o código de barras
@@ -1853,13 +1855,14 @@ abstract class AbstractBoleto implements BoletoContract
 
     /**
      * Define a linha digitável do boleto
+     * @param string $linhaDigitavel
      *
-     * @return string
-     * @throws \Exception
+     * @return AbstractBoleto
      */
-	public function setLinhaDigitavel($campoLinhaDigitavel)
+	public function setLinhaDigitavel($linhaDigitavel)
 	{
-		$this->campoLinhaDigitavel = $campoLinhaDigitavel;
+		$this->campoLinhaDigitavel = $linhaDigitavel;
+        return $this;
 	}
 
 
