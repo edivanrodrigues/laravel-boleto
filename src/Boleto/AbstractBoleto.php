@@ -1794,6 +1794,19 @@ abstract class AbstractBoleto implements BoletoContract
         return isset($this->carteirasNomes[$this->getCarteira()]) ? $this->carteirasNomes[$this->getCarteira()] : $this->getCarteira();
     }
 
+
+    /**
+     * Define o codigo de barras
+     *
+     * @return string
+     * @throws \Exception
+     */
+    public function setCodigoBarras($campoCodigoBarras)
+    {
+		$this->campoCodigoBarras = $campoCodigoBarras;
+	}
+
+
     /**
      * Retorna o código de barras
      *
@@ -1836,6 +1849,20 @@ abstract class AbstractBoleto implements BoletoContract
 
         return $codigoBanco . '-' . Util::modulo11($codigoBanco, 2, 9, 0, $x10);
     }
+
+
+    /**
+     * Define a linha digitável do boleto
+     *
+     * @return string
+     * @throws \Exception
+     */
+	public function setLinhaDigitavel($campoLinhaDigitavel)
+	{
+		$this->campoLinhaDigitavel = $campoLinhaDigitavel;
+	}
+
+
 
     /**
      * Retorna a linha digitável do boleto
